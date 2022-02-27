@@ -1,0 +1,168 @@
+.wrapper {
+  display: flex;
+  overflow-x: auto;
+  margin-top: 50px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 24px;
+  height: 100%;
+}
+
+.section {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cardBG {
+  width: 200px;
+  height: 140px;
+  background-color: #40a8c2;
+
+  border-radius: 8px;
+  position: relative;
+}
+
+.cardBG.night {
+  background: -webkit-radial-gradient(white 0px, transparent 1px), -webkit-radial-gradient(white 0px, transparent 1px),
+    -webkit-radial-gradient(white 0px, transparent 1px), #206583;
+  background-position: 5px 5px, 32px 81px;
+  background-size: 50px 50px;
+}
+
+.cardBGHeader {
+  width: 100%;
+  height: 30px;
+  padding: 0px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: #343235;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cardBGBody {
+  display: flex;
+  flex-direction: column;
+  height: 110px;
+  padding: 0px 0px 8px;
+}
+
+.cardBGFirst {
+  height: 75%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 4px;
+}
+
+.cardBGRight {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.cardBGRight > p:nth-child(1) {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.tempContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tempContainer > p:nth-child(1) {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.tempContainer > p:nth-child(2) {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+/* .icon {
+  height: 100px;
+} */
+
+.cardBGSecond {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 25%;
+  padding: 0px 4px;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.windSpeed {
+  display: flex;
+  /* font-size: 15px; */
+  align-items: center;
+}
+
+.windSpeed > img {
+  height: 20px;
+}
+
+.cardSM {
+  background-color: #40a8c2;
+
+  border-radius: 8px;
+  height: 45px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 4px 0px;
+}
+
+.cardSM.night {
+  background: -webkit-radial-gradient(white 0px, transparent 1px), -webkit-radial-gradient(white 0px, transparent 1px),
+    -webkit-radial-gradient(white 0px, transparent 1px), #206583;
+  background-position: 5px 5px, 32px 81px;
+  background-size: 50px 50px;
+}
+
+.cardSM h1 {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cardSM h2 {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.cardSM h3 {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.cardSM img {
+  height: 40px;
+}
+
+.closeImage {
+  height: 20px;
+  cursor: pointer;
+}
+
+@media (max-width: 425px) {
+  .wrapper {
+    margin-top: 20px;
+  }
+}

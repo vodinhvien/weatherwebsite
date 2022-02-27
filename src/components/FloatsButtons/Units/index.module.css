@@ -1,0 +1,105 @@
+.radioButton:checked,
+.radioButton:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+.radioButton:checked + label,
+.radioButton:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #ffffff;
+}
+.radioButton:checked + label:before,
+.radioButton:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ffffff;
+  border-radius: 100%;
+  background: #ffffff;
+}
+.radioButton:checked + label:after,
+.radioButton:not(:checked) + label:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: #40a8c2;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.radioButton:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.radioButton:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.radioItem {
+  margin: 4px 0px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.checkButton:checked,
+.checkButton:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+.checkButton:checked + label,
+.checkButton:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #ffffff;
+}
+.checkButton:checked + label:before,
+.checkButton:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #ffffff;
+  /* border-radius: 100%; */
+  background: #ffffff;
+}
+.checkButton:checked + label:after,
+.checkButton:not(:checked) + label:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: #40a8c2;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  /* border-radius: 100%; */
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.checkButton:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.checkButton:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
