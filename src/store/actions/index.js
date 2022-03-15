@@ -24,21 +24,21 @@ export const getDefaltLocation = async () => {
 
 export const getForecastData = ({ unit, lon, lat, name }) => async dispatch => {
   let weatherData = await Axios.get(
-    `${process.env.REACT_APP_WEATHER_MAIN_URL}/daily?${!name ? 'lat=' + lat + '&lon=' + lon : 'q=' + name}&cnt=7&units=${
+    `https://community-open-weather-map.p.rapidapi.com/forecast/daily?${!name ? 'lat=' + lat + '&lon=' + lon : 'q=' + name}&cnt=7&units=${
       unit ? unit : 'metric'
     }`,
     {
       headers: {
-        'x-rapidapi-key': process.env.REACT_APP_RAPIDAPI_KEY
+        'x-rapidapi-key': 'ce5c12cd08msh9c9195546ef9cd7p1a9294jsn2e4b57f1b9e2'
       }
     }
   );
   lat = lat ? lat : weatherData.data.city.coord.lat;
   lon = lon ? lon : weatherData.data.city.coord.lon;
 
-  let timeData = await Axios.get(`${process.env.REACT_APP_RAPIDAPI_TIME_URL}?location=${lat}, ${lon}`, {
+  let timeData = await Axios.get(`https://geo-services-by-mvpc-com.p.rapidapi.com/timezone?location=${lat}, ${lon}`, {
     headers: {
-      'x-rapidapi-key': process.env.REACT_APP_RAPIDAPI_KEY
+      'x-rapidapi-key': 'ce5c12cd08msh9c9195546ef9cd7p1a9294jsn2e4b57f1b9e2'
     }
   });
   let formatedData = await formateWeatherData({ ...weatherData.data, time: timeData.data.data.time_now });
