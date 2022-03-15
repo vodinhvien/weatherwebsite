@@ -4,8 +4,6 @@ A simple weather forecast application based on the [rabidApis](https://rapidapi.
 
 - map used in the app is from [pigeon-maps](https://pigeon-maps.js.org/)
 
-![](preview.gif)
-
 
 ### Installation
 
