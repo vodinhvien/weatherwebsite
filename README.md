@@ -6,7 +6,6 @@ A simple weather forecast application based on the [rabidApis](https://rapidapi.
 
 ![](preview.gif)
 
-### [Site](https://montheramer.github.io/weather.app/)
 
 ### Installation
 
@@ -27,7 +26,3 @@ Kanban uses a number of open source projects to work properly:
 - [React](https://reactjs.org/) - JavaScript library for building user interfaces
 - [react-redux](https://react-redux.js.org/) - state managment
 
-### Todos
-
-- Create new design for the site
-- Add light and dark mode
