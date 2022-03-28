@@ -3,47 +3,48 @@ import { mainActionsTypes, utilsActionsTypes } from '../actions_types';
 import { formateWeatherData } from '../../utils';
 
 /* ----------------------get user curent location---------------------------- */
-export const getDefaltLocation = async () => {
-  try {
-    const fetchData = async () => {
-      return new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition(resolve, reject);
-      });
+export const getDefaltLocation = async() => {
+    try {
+        const fetchData = async() => {
+            return new Promise((resolve, reject) => {
+                navigator.geolocation.getCurrentPosition(resolve, reject);
+            });
+        };
+        if (navigator.geolocation) {
+            let result = await fetchData();
+            return result.coords ? { lat: result.coords.latitude, lon: result.coords.longitude } : { lat: 10.762622, lon: 106.660172 };
+        } else {
+            // * return ho chi minh city lat and lon if any thing went wrong
+            return { lat: 10.762622, lon: 106.660172 };
+        }
+    } catch (err) {
+        return { lat: 10.762622, lon: 106.660172 };
+    }
+};
+
+export const getForecastData =
+    ({ unit, lon, lat, name }) =>
+    async dispatch => {
+        let weatherData = await Axios.get(
+            `https://community-open-weather-map.p.rapidapi.com/forecast/daily?${!name ? 'lat=' + lat + '&lon=' + lon : 'q=' + name}&cnt=7&units=${
+        unit ? unit : 'metric'
+      }`, {
+                headers: {
+                    'x-rapidapi-key': 'ce5c12cd08msh9c9195546ef9cd7p1a9294jsn2e4b57f1b9e2'
+                }
+            }
+        );
+        lat = lat ? lat : weatherData.data.city.coord.lat;
+        lon = lon ? lon : weatherData.data.city.coord.lon;
+
+        let timeData = await Axios.get(`https://geo-services-by-mvpc-com.p.rapidapi.com/timezone?location=${lat}, ${lon}`, {
+            headers: {
+                'x-rapidapi-key': 'ce5c12cd08msh9c9195546ef9cd7p1a9294jsn2e4b57f1b9e2'
+            }
+        });
+        let formatedData = await formateWeatherData({...weatherData.data, time: timeData.data.data.time_now });
+        return dispatch({ type: mainActionsTypes.ADD_NEW_WEATHER_ITEM, payload: [formatedData] });
     };
-    if (navigator.geolocation) {
-      let result = await fetchData();
-      return result.coords ? { lat: result.coords.latitude, lon: result.coords.longitude } : { lat: 51.477928, lon: -0.001545 };
-    } else {
-      // * return greenwich lat and lon if any thing went wrong
-      return { lat: 51.477928, lon: -0.001545 };
-    }
-  } catch (err) {
-    return { lat: 51.477928, lon: -0.001545 };
-  }
-};
-
-export const getForecastData = ({ unit, lon, lat, name }) => async dispatch => {
-  let weatherData = await Axios.get(
-    `https://community-open-weather-map.p.rapidapi.com/forecast/daily?${!name ? 'lat=' + lat + '&lon=' + lon : 'q=' + name}&cnt=7&units=${
-      unit ? unit : 'metric'
-    }`,
-    {
-      headers: {
-        'x-rapidapi-key': 'ce5c12cd08msh9c9195546ef9cd7p1a9294jsn2e4b57f1b9e2'
-      }
-    }
-  );
-  lat = lat ? lat : weatherData.data.city.coord.lat;
-  lon = lon ? lon : weatherData.data.city.coord.lon;
-
-  let timeData = await Axios.get(`https://geo-services-by-mvpc-com.p.rapidapi.com/timezone?location=${lat}, ${lon}`, {
-    headers: {
-      'x-rapidapi-key': 'ce5c12cd08msh9c9195546ef9cd7p1a9294jsn2e4b57f1b9e2'
-    }
-  });
-  let formatedData = await formateWeatherData({ ...weatherData.data, time: timeData.data.data.time_now });
-  return dispatch({ type: mainActionsTypes.ADD_NEW_WEATHER_ITEM, payload: [formatedData] });
-};
 
 /* -------------------------remove weather column---------------------------- */
 export const removeWeatherCol = index => dispatch => dispatch({ type: mainActionsTypes.REMOVE_WEATHER_ITEM, payload: index });

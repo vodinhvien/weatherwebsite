@@ -8,8 +8,8 @@ import Loader from '../Loader';
 import styles from './index.module.css';
 import closeImg from '../../assets/close.svg';
 
-const MAP_ID = process.env.REACT_APP_MAP_ID;
-const MAPTILER_ACCESS_TOKEN = process.env.REACT_APP_MAPTILER_ACCESS_TOKEN;
+// const MAP_ID = process.env.REACT_APP_MAP_ID;
+// const MAPTILER_ACCESS_TOKEN = process.env.REACT_APP_MAPTILER_ACCESS_TOKEN;
 
 const mapTilerProvider = (x, y, z, dpr) => {
   return `https://api.maptiler.com/maps/${MAP_ID}/256/${z}/${x}/${y}${dpr >= 2 ? '@2x' : ''}.png?key=${MAPTILER_ACCESS_TOKEN}`;
@@ -36,9 +36,9 @@ export default ({ show }) => {
         <Loader />
       ) : (
         <Map
-          defaultZoom={3}
+          defaultZoom={10}
           minZoom={3}
-          defaultCenter={[32.22111, 35.25444]}
+          defaultCenter={[10.762622, 106.660172]}
           provider={mapTilerProvider}
           dprs={[1, 2]}
           onClick={handleClick}
