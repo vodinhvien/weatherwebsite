@@ -10,7 +10,6 @@ A simple weather forecast application based on the [rabidApis](https://rapidapi.
 - choose weather forecast for any location from map
 - show weather for many areas
 - display temperature in Celsius or Fahrenheit
-- 
 
 ### Tech
 
