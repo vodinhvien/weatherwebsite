@@ -30,7 +30,7 @@ export const getForecastData =
         unit ? unit : 'metric'
       }`, {
                 headers: {
-                    'x-rapidapi-key': 'ce5c12cd08msh9c9195546ef9cd7p1a9294jsn2e4b57f1b9e2'
+                    'x-rapidapi-key': '00c0fc999cmshba5b634c0e546e3p19852bjsn720a4eb70897'
                 }
             }
         );
@@ -39,7 +39,7 @@ export const getForecastData =
 
         let timeData = await Axios.get(`https://geo-services-by-mvpc-com.p.rapidapi.com/timezone?location=${lat}, ${lon}`, {
             headers: {
-                'x-rapidapi-key': 'ce5c12cd08msh9c9195546ef9cd7p1a9294jsn2e4b57f1b9e2'
+                'x-rapidapi-key': '00c0fc999cmshba5b634c0e546e3p19852bjsn720a4eb70897'
             }
         });
         let formatedData = await formateWeatherData({...weatherData.data, time: timeData.data.data.time_now });

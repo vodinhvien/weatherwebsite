@@ -1,6 +1,6 @@
 .modal {
     position: fixed;
-    top: 25%;
+    top: 30%;
     left: 40%;
     display: flex;
     border: 5px double hsl(0, 0%, 100%);

@@ -56,7 +56,7 @@ export default ({ themes, handleNewPlace }) => {
             type='text'
             value={state?.countryName || ''}
             id='country_bubble'
-            placeholder='Enter Country'
+            placeholder='Nhập Quốc gia'
             onChange={handleCountryChange}
           />
           {state?.countryList?.length && state.showCountry ? (
@@ -73,7 +73,7 @@ export default ({ themes, handleNewPlace }) => {
         {/* Cities */}
         {state.showCities ? (
           <div className={styles.autocomplete}>
-            <input type='text' id='country_bubble' value={state?.cityName || ''} placeholder='Choose City' onChange={handleCityChange} />
+            <input type='text' id='country_bubble' value={state?.cityName || ''} placeholder='Chọn Thành phố' onChange={handleCityChange} />
             {state?.citiesList?.length && state.showCities ? (
               <div id='country_bubble' className={styles.list}>
                 {state.citiesList.map((item, i) => (

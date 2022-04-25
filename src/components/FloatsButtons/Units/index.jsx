@@ -17,7 +17,7 @@ export default ({ handleUnits, handleOnlyOneLocation, unit, onlyOneLocation, the
                     }`}
             >
                 <p id='units_bubble' className={styles.radioItem}>
-                    Units:
+                    Hiển thị:
                 </p>
                 <p id='units_bubble' className={styles.radioItem}>
                     <input
@@ -47,7 +47,7 @@ export default ({ handleUnits, handleOnlyOneLocation, unit, onlyOneLocation, the
                 <p id='units_bubble' className={styles.radioItem}>
                     <input id='units_bubble' className={styles.checkButton} type='checkbox' checked={!!onlyOneLocation} name='radio-group' />
                     <label id='units_bubble' onClick={handleOnlyOneLocation}>
-                        Only One Location?
+                        Chỉ 1 địa điểm
                     </label>
                 </p>
             </div>
