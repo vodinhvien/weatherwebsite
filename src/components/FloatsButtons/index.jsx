@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { showLoader, hideLoader } from '../../store/actions';
-import { showMap, updateUnit, getForecastData, updateOnlyOneLocation } from '../../store/actions';
+import { hideMap, showMap, updateUnit, getForecastData, updateOnlyOneLocation } from '../../store/actions';
 
 import Units from './Units';
 import Countries from './Country';
 import mapIcon from '../../assets/map-marked-solid.svg';
-
+import Image from '../Image';
 import styles from './index.module.css';
 export default () => {
   const dispatch = useDispatch();
@@ -15,7 +15,10 @@ export default () => {
   const { unit, onlyOneLocation, themes } = useSelector(state => state.mainState);
 
   const handleUnits = e => {
-    if (e !== unit) dispatch(updateUnit(e));
+    if (e !== unit) {
+      dispatch(updateUnit(e));
+
+    }
   };
 
   const handleClick = index => {
@@ -23,8 +26,13 @@ export default () => {
     if (index === 2) dispatch(showMap());
   };
 
+
   const handleOnlyOneLocation = e => {
     dispatch(updateOnlyOneLocation());
+    dispatch(hideMap());
+  };
+  const handleLoad = e => {
+    if (e === 2) dispatch(showMap());
   };
   const handleNewPlace = async data => {
     dispatch(showLoader());
@@ -34,12 +42,12 @@ export default () => {
 
   return (
     <div className={styles.floatbuttons}>
-      <Countries themes={themes} handleNewPlace={handleNewPlace} />
+      <Image value='logo' height='100px' />
 
-      <div className={`${styles.cyrcle} ${themes[0] ? styles.night : ''}`} onClick={() => handleClick(2)}>
+      <div className={`${styles.cyrcle} ${themes[0] ? styles.night : ''}`} onClick={() => handleClick(2)} onLoad={() => handleLoad(2)}>
         <img src={mapIcon} className={styles.floatbuttonsImage} onClick={() => handleClick(2)} />
       </div>
-
+      <Countries themes={themes} handleNewPlace={handleNewPlace} />
       <Units
         handleUnits={handleUnits}
         handleOnlyOneLocation={handleOnlyOneLocation}

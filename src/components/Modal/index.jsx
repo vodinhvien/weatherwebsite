@@ -3,8 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Map } from 'pigeon-maps';
 
 import { hideMap, showLoader, hideLoader, getForecastData } from '../../store/actions';
-
-import Loader from '../Loader';
 import styles from './index.module.css';
 import closeImg from '../../assets/close.svg';
 
@@ -25,23 +23,36 @@ export default ({ show }) => {
   const handleClick = async ({ latLng }) => {
     setLoader(true);
     await dispatch(getForecastData({ unit, lat: latLng[0], lon: latLng[1] }));
-    dispatch(hideMap());
+
   };
+
 
   const handleHide = () => dispatch(hideMap());
   return (
     <div id='modal' className={`${styles.modal} ${show ? styles.show : ''} ${themes[0] ? styles.night : ''}`}>
       <img src={closeImg} className={styles.modalClose} onClick={handleHide} />
       {loader ? (
-        <Loader />
-      ) : (
         <Map
           defaultZoom={10}
-          minZoom={3}
+          minZoom={1}
           defaultCenter={[10.762622, 106.660172]}
           provider={mapTilerProvider}
           dprs={[1, 2]}
           onClick={handleClick}
+          width="800px"
+          height="380px"
+        ></Map>
+      ) : (
+        <Map
+          defaultZoom={10}
+          minZoom={1}
+          defaultCenter={[10.762622, 106.660172]}
+          provider={mapTilerProvider}
+          dprs={[1, 2]}
+          onClick={handleClick}
+
+          width="800px"
+          height="380px"
         ></Map>
       )}
     </div>

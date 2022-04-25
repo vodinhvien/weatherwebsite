@@ -45,12 +45,12 @@ export default ({ themes, handleNewPlace }) => {
   };
   return (
     <div id='country_bubble' className={`${gStyels.cyrcle} ${themes[0] ? gStyels.night : ''}`}>
-      <img src={cityIcon} className={gStyels.floatbuttonsImage} id='country_bubble' onClick={updateShowBuble} />
+      <img src={cityIcon} className={gStyels.floatbuttonsImage} id='country_bubble' onLoad={updateShowBuble} />
       <div
-        className={`${gStyels.bubble} ${themes[0] ? gStyels.night : ''} ${showId === 'country_bubble' ? gStyels.showBubble : ''}  ${
-          gStyels.firstBuble
-        }`}
+        className={`${gStyels.bubble} ${themes[0] ? gStyels.night : ''} ${showId === 'country_bubble' ? gStyels.showBubble : ''}  ${gStyels.firstBuble
+          }`}
       >
+        {/* search */}
         <div className={styles.autocomplete}>
           <input
             type='text'

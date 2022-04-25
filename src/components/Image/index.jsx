@@ -7,9 +7,10 @@ import icon6 from '../../assets/icons/icon6.svg';
 import icon7 from '../../assets/icons/icon7.svg';
 import icon8 from '../../assets/icons/icon8.svg';
 import clear from '../../assets/icons/clear.svg';
+import logo from '../../assets/icons/logo.png';
 
 export default ({ value, height }) => {
-  const images = { icon2, icon3, icon5, icon6, icon7, icon8, clear };
+  const images = { icon2, icon3, icon5, icon6, icon7, icon8, clear, logo };
 
   const ImageName = images[value];
 

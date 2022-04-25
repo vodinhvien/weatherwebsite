@@ -15,7 +15,7 @@ export default () => {
       {data?.map((item, i) =>
         i === 0 ? (
           <div className={styles.section} key={i}>
-            <div className={`${styles.cardBG} ${themes[0] ? styles.night : ''}`}>
+            <div className={`${styles.cardBG} ${themes[0]}`}>
               <div className={styles.cardBGHeader}>{item.city || 'Unknown Place'}</div>
               <div className={styles.cardBGBody}>
                 <div className={styles.cardBGFirst}>
@@ -48,7 +48,7 @@ export default () => {
           </div>
         ) : i % 2 !== 0 ? (
           <div className={styles.section} key={i}>
-            <div className={`${styles.cardSM} ${themes[0] ? styles.night : ''}`}>
+            <div className={`${styles.cardSM} ${themes[0]}`}>
               <h1>{item.day.toUpperCase()}</h1>
               <div className={styles.tempContainer}>
                 <h2>
@@ -62,7 +62,7 @@ export default () => {
               </div>
               <Image value={item.icon} height='40px' />
             </div>
-            <div className={`${styles.cardSM} ${themes[0] ? styles.night : ''}`}>
+            <div className={`${styles.cardSM} ${themes[0]}`}>
               <h1>{data[i + 1].day.toUpperCase()}</h1>
               <div className={styles.tempContainer}>
                 <h2>

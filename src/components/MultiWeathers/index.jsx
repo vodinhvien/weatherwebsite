@@ -20,7 +20,7 @@ export default ({ weathers, unit, themes }) => {
         <div className={styles.container} key={j}>
           {data?.map((item, i) =>
             i === 0 ? (
-              <div className={`${styles.cardBG} ${themes[j] ? styles.night : ''}`} key={i}>
+              <div className={`${styles.cardBG} ${themes[j]}`} key={i}>
                 <div className={styles.cardBGHeader}>
                   {item.city || 'Unknown Place'}
                   <img src={closeIcon} className={styles.closeImage} onClick={() => handleRemove(j)} />
@@ -54,7 +54,7 @@ export default ({ weathers, unit, themes }) => {
                 </div>
               </div>
             ) : (
-              <div className={`${styles.cardSM} ${themes[j] ? styles.night : ''}`} key={i}>
+              <div className={`${styles.cardSM} ${themes[j]}`} key={i}>
                 <h1>{item.day.toUpperCase()}</h1>
                 <div className={styles.tempContainer}>
                   <h2>

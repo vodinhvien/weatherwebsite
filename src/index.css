@@ -24,10 +24,10 @@ body {
     display: flex;
     justify-content: center;
     /* align-items: center; */
-    background: -moz-radial-gradient(bottom right, ellipse farthest-corner, #3797c7 0%, #091a22 80%);
-    background: -o-radial-gradient(bottom right, ellipse farthest-corner, #3797c7 0%, #091a22 80%);
-    background: -ms-radial-gradient(bottom right, ellipse farthest-corner, #3797c7 0%, #091a22 80%);
-    background: -webkit-radial-gradient(bottom right, ellipse farthest-corner, #3797c7 0%, #091a22 80%);
+    background: -moz-radial-gradient(bottom right, ellipse farthest-corner, #9237c7 0%, #091a22 80%);
+    background: -o-radial-gradient(bottom right, ellipse farthest-corner, #9237c7 0%, #091a22 80%);
+    background: -ms-radial-gradient(bottom right, ellipse farthest-corner, #9237c7 0%, #091a22 80%);
+    background: -webkit-radial-gradient(bottom right, ellipse farthest-corner, #9237c7 0%, #091a22 80%);
 }
 
 .container {

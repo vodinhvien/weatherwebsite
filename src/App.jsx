@@ -31,7 +31,7 @@ const App = () => {
 
       {weathers?.length === 1 && window.innerWidth > 425 ? <Main /> : <MultiWeather weathers={weathers} unit={unit} themes={themes} />}
 
-      {isLoading ? <Loader /> : null}
+      {/* {isLoading ? <Loader /> : null} */}
       {isMapShown ? <Modal show={isMapShown} /> : null}
     </div>
   );
