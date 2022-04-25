@@ -9,6 +9,7 @@ map from [pigeon-maps](https://pigeon-maps.js.org/)
 - choose weather forecast from map
 - show weather for many areas
 - display temperature in Celsius or Fahrenheit
+- 
 ![](preview.gif)
 ### Tech
 
