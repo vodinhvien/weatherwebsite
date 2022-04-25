@@ -4,13 +4,6 @@ A simple weather forecast application based on the [rabidApis](https://rapidapi.
 
 - map used in the app is from [pigeon-maps](https://pigeon-maps.js.org/)
 
-
-### Installation
-
-- clone the repo
-- install packages -`npm install`
-- run -`npm start`
-
 ### Features!
 
 - show current location weather forecast for next 7 days
