@@ -40,7 +40,7 @@ export default ({ show }) => {
           dprs={[1, 2]}
           onClick={handleClick}
           width="800px"
-          height="380px"
+          height="600px"
         ></Map>
       ) : (
         <Map
@@ -52,7 +52,7 @@ export default ({ show }) => {
           onClick={handleClick}
 
           width="800px"
-          height="380px"
+          height="600px"
         ></Map>
       )}
     </div>

@@ -29,7 +29,7 @@ export default () => {
 
   const handleOnlyOneLocation = e => {
     dispatch(updateOnlyOneLocation());
-    dispatch(hideMap());
+
   };
   const handleLoad = e => {
     if (e === 2) dispatch(showMap());
@@ -42,7 +42,7 @@ export default () => {
 
   return (
     <div className={styles.floatbuttons}>
-      <Image value='logo' height='100px' />
+
 
       <div className={`${styles.cyrcle} ${themes[0] ? styles.night : ''}`} onClick={() => handleClick(2)} onLoad={() => handleLoad(2)}>
         <img src={mapIcon} className={styles.floatbuttonsImage} onClick={() => handleClick(2)} />
