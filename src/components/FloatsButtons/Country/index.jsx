@@ -56,7 +56,7 @@ export default ({ themes, handleNewPlace }) => {
             type='text'
             value={state?.countryName || ''}
             id='country_bubble'
-            placeholder='Nhập Quốc gia'
+            placeholder='Tên Quốc gia'
             onChange={handleCountryChange}
           />
           {state?.countryList?.length && state.showCountry ? (

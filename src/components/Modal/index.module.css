@@ -1,7 +1,7 @@
 .modal {
     position: fixed;
-    top: 30%;
-    left: 40%;
+    top: 5%;
+    left: 43%;
     display: flex;
     border: 5px double hsl(0, 0%, 100%);
     border-radius: 10px;
@@ -20,7 +20,7 @@
 }
 
 .modal.show.night {
-    background-color: #206583;
+    background-color: #394867;
 }
 
 .modal.hide {
